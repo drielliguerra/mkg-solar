@@ -138,7 +138,7 @@
           </p>
         </div>
 
-        <form class="lead-form" action="#" method="post">
+        <form class="lead-form" id="leadForm">
           <label>
             Nome / Empresa
             <input type="text" name="nome_empresa" placeholder="Seu nome e empresa" required />
@@ -156,7 +156,7 @@
 
           <label>
             Cidade
-            <input type="text" name="cidade" placeholder="Ex.: Praia Grande" required />
+            <input type="text" name="cidade" placeholder="Ex.: Praia Grande" />
           </label>
 
           <fieldset>
@@ -195,6 +195,42 @@
       <p class="footer-desc">Especialistas em geração de clientes para empresas de energia solar.</p>
     </div>
   </footer>
+  <script>
+  document.getElementById("leadForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const nome = document.querySelector('[name="nome_empresa"]').value;
+    const email = document.querySelector('[name="email"]').value;
+    const telefone = document.querySelector('[name="telefone"]').value;
+    const cidade = document.querySelector('[name="cidade"]').value;
+
+    const trafegoPago = Array.from(document.querySelectorAll('[name="trafego_pago"]:checked'))
+      .map(item => item.value)
+      .join(", ") || "Não informado";
+
+    const canais = Array.from(document.querySelectorAll('[name="canais"]:checked'))
+      .map(item => item.value)
+      .join(", ") || "Não informado";
+
+    const mensagem = `
+Olá! Quero solicitar uma análise do meu negócio.
+
+Nome / Empresa: ${nome}
+E-mail: ${email}
+Telefone: ${telefone}
+Cidade: ${cidade || "Não informado"}
+
+Utiliza tráfego pago: ${trafegoPago}
+
+Canais atuais: ${canais}
+    `;
+
+    const numeroWhatsApp = "5517996465741"; 
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, "_blank");
+  });
+</script>
 
 </body>
 </html> 
