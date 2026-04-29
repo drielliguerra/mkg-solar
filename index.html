@@ -22,7 +22,6 @@
 
   <section class="hero">
     <div class="container hero-grid">
-
       <div class="hero-content">
         <div class="badge">
           AVISO: Exclusivo para Donos e/ou Integradoras de Energia Solar.
@@ -37,7 +36,7 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#formulario">
+          <a class="btn btn-primary" href="/#formulario">
             QUERO UMA MÁQUINA DE LEADS QUALIFICADOS
           </a>
         </div>
@@ -46,12 +45,10 @@
       <div class="hero-image">
         <img src="./imagem/Vendedora-Energia-Solar.png" alt="Estratégia de marketing para energia solar">
       </div>
-
     </div>
   </section>
 
   <main>
-
     <section class="section section-dark">
       <div class="container narrow">
         <p class="eyebrow">DOBRA 2</p>
@@ -124,7 +121,6 @@
 
     <section class="section section-form" id="formulario">
       <div class="container form-layout">
-
         <div class="form-copy">
           <p class="eyebrow">DOBRA 4</p>
           <h2>A decisão lógica. <span>Agende o seu Diagnóstico de Marketing.</span></h2>
@@ -183,10 +179,8 @@
 
           <p class="form-note">Seus dados estão 100% seguros. Não enviamos spam.</p>
         </form>
-
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
@@ -195,25 +189,25 @@
       <p class="footer-desc">Especialistas em geração de clientes para empresas de energia solar.</p>
     </div>
   </footer>
+
   <script>
-  document.getElementById("leadForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+    document.getElementById("leadForm").addEventListener("submit", function(event) {
+      event.preventDefault();
 
-    const nome = document.querySelector('[name="nome_empresa"]').value;
-    const email = document.querySelector('[name="email"]').value;
-    const telefone = document.querySelector('[name="telefone"]').value;
-    const cidade = document.querySelector('[name="cidade"]').value;
+      const nome = document.querySelector('[name="nome_empresa"]').value.trim();
+      const email = document.querySelector('[name="email"]').value.trim();
+      const telefone = document.querySelector('[name="telefone"]').value.trim();
+      const cidade = document.querySelector('[name="cidade"]').value.trim();
 
-    const trafegoPago = Array.from(document.querySelectorAll('[name="trafego_pago"]:checked'))
-      .map(item => item.value)
-      .join(", ") || "Não informado";
+      const trafegoPago = Array.from(document.querySelectorAll('[name="trafego_pago"]:checked'))
+        .map(item => item.value)
+        .join(", ") || "Não informado";
 
-    const canais = Array.from(document.querySelectorAll('[name="canais"]:checked'))
-      .map(item => item.value)
-      .join(", ") || "Não informado";
+      const canais = Array.from(document.querySelectorAll('[name="canais"]:checked'))
+        .map(item => item.value)
+        .join(", ") || "Não informado";
 
-    const mensagem = `
-Olá! Quero solicitar uma análise do meu negócio.
+      const mensagem = `Olá! Quero solicitar uma análise do meu negócio.
 
 Nome / Empresa: ${nome}
 E-mail: ${email}
@@ -222,15 +216,13 @@ Cidade: ${cidade || "Não informado"}
 
 Utiliza tráfego pago: ${trafegoPago}
 
-Canais atuais: ${canais}
-    `;
+Canais atuais: ${canais}`;
 
-    const numeroWhatsApp = "5517996465741"; 
-    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+      const numeroWhatsApp = "5513996465741";
+      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
-    window.open(url, "_blank");
-  });
-</script>
-
+      window.location.href = url;
+    });
+  </script>
 </body>
-</html> 
+</html>
