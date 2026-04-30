@@ -32,7 +32,7 @@ body {
 }
 
 .logo {
-  width: 120px;
+  width: 240px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -204,7 +204,7 @@ h2 span {
 }
 
 .pain-card {
-  background: rgba(255, 255, 255, 0.045);
+  background: rgba(255, 255, 255, 0.239);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -390,7 +390,7 @@ fieldset {
   transform: scale(1.1);
 }
 .whatsapp-float::after {
-  content: "Fale com especialista";
+  content: "Solicite seu diagnostico";
   position: absolute;
   right: 70px;
   background: #111;
@@ -404,4 +404,55 @@ fieldset {
 
 .whatsapp-float:hover::after {
   opacity: 1;
+}
+.pain-card {
+  text-align: center;
+  padding: 40px 25px;
+}
+
+.pain-icon {
+  width: 70px;  
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.pain-card h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pain-card p {
+  text-align: center;
+}
+.pain-icon {
+  width: 250px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+  transition: 0.3s;
+}
+
+.pain-card:hover .pain-icon {
+  transform: scale(1.05);
+}
+.pillar-card {
+  text-align: center;
+  padding: 36px 28px;
+}
+
+.pillar-icon {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 24px;
+  border-radius: 22px;
+}
+
+.pillar-card h3 {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.pillar-card p {
+  text-align: center;
 }
