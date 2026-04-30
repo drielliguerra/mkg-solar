@@ -1,4 +1,4 @@
-document.getElementById("leadForm").addEventListener("submit", function(event) {
+document.getElementById("formulario").addEventListener("submit", function(event) {
   event.preventDefault();
 
   const nome = document.querySelector('[name="nome_empresa"]').value.trim();
