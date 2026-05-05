@@ -22,7 +22,12 @@ body {
 .top-header {
   background: #020d08;
   padding: 18px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  /*border-bottom: 1px solid rgba(255, 255, 255, 0.08);*/
+}
+
+header {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
 }
 
 .header-container {
@@ -31,27 +36,30 @@ body {
   justify-content: center;
 }
 
+header {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
 .logo {
-  width: 240px;
+  width: 300px;
   max-width: 100%;
   height: auto;
   display: block;
 }
 
 .hero {
-  min-height: 720px;
-  display: flex;
-  align-items: center;
+  position: relative;
+  background:url('./imagem/back-dobra1.png') center/cover no-repeat;
+  padding: 80px 0;
+  overflow: hidden;
+}
 
-  background:
-    linear-gradient(90deg, rgba(3, 15, 9, 0.75) 0%, rgba(3, 15, 9, 0.55) 45%, rgba(3, 15, 9, 0.15) 100%),
-    url("./imagem/back-dobra1.jpeg");
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  padding: 90px 0;
+.hero-content,
+.hero-image {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-grid {
@@ -101,10 +109,11 @@ h1 span {
   display: flex;
   align-items: center;
   gap: 16px;
+   justify-content: center;
 }
 
 .btn {
-  display: inline-block;
+  display: flex;
   background: #f2be00;
   color: #061008;
   padding: 18px 26px;
@@ -115,12 +124,17 @@ h1 span {
   border: none;
   cursor: pointer;
   transition: 0.25s ease;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
 .hero-actions {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
+
 .hero-actions {
   display: flex;
   justify-content: center;
@@ -133,6 +147,7 @@ h1 span {
   padding: 20px 30px;
   font-size: 18px;
 }
+
 .hero-content h1 {
   text-align: left;
 }
@@ -165,16 +180,18 @@ h1 span {
 }
 
 .section {
-  padding: 95px 0;
+  padding: 110px 0;
 }
 
 .section-dark {
   background: #07150d;
+  padding-bottom: 120px;
 }
 
 .section-light {
   background: #f5fff3;
   color: #07150d;
+  padding-top: 120px;
 }
 
 .narrow {
@@ -219,14 +236,17 @@ h2 span {
 .pillars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 28px;
   margin-top: 42px;
+  align-items: stretch;
 }
 
 .pain-card,
 .pillar-card {
   padding: 28px;
   border-radius: 22px;
+  height: 100%;
+  text-align: center;
 }
 
 .pain-card {
@@ -389,8 +409,12 @@ fieldset {
   .btn {
     width: 100%;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
+
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -402,7 +426,7 @@ fieldset {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   z-index: 999;
   transition: 0.3s;
 }
@@ -415,6 +439,7 @@ fieldset {
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
+
 .whatsapp-float::after {
   content: "Solicite seu diagnóstico";
   position: absolute;
@@ -431,13 +456,14 @@ fieldset {
 .whatsapp-float:hover::after {
   opacity: 1;
 }
+
 .pain-card {
   text-align: center;
   padding: 40px 25px;
 }
 
 .pain-icon {
-  width: 70px;  
+  width: 70px;
   height: auto;
   margin-bottom: 20px;
 }
@@ -450,16 +476,18 @@ fieldset {
 .pain-card p {
   text-align: center;
 }
+
 .pain-icon {
   width: 250px;
   margin-bottom: 20px;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
   transition: 0.3s;
 }
 
 .pain-card:hover .pain-icon {
   transform: scale(1.05);
 }
+
 .pillar-card {
   text-align: center;
   padding: 36px 28px;
